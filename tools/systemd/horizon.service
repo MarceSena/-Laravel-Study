@@ -1,0 +1,15 @@
+[Unit]
+Description=Laravel Horizon Queue Manager
+After=network.target auditd.service
+
+[Service]
+Type=simple
+User={{user}}
+Restart=always
+RestartSec=1
+ExecStart=/usr/bin/php /home/{{user}}/mei/artisan horizon
+
+[Install]
+WantedBy=multi-user.target
+
+# This file may normally be saved as /etc/systemd/system/horizon.service

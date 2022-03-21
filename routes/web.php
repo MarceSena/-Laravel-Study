@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProdutoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('produtos/lista',[ProdutoController::class, 'lista']);
+Route::get('/produto/{id}',[ProdutoController::class, 'mostra'])->name('produto');
